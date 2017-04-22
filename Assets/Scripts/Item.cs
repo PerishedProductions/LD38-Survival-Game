@@ -8,9 +8,21 @@ public class Item : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Item pickup
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            if (Input.GetButtonDown("Pickup"))
+            {
+                other.GetComponent<Inventory>().AddItem(this);
+                Destroy(this.GetComponent<MeshRenderer>());
+                Destroy(this.GetComponent<BoxCollider>());
+                Destroy(this.GetComponent<SphereCollider>());
+                Destroy(this.GetComponent<GravityBody>());
+                Destroy(this.GetComponent<Rigidbody>());
+            }
+        }
+    }
 }

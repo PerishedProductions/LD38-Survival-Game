@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54661852952281598}
   - component: {fileID: 114636722897781698}
   - component: {fileID: 114684697950777066}
+  - component: {fileID: 114907899419313348}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -71,7 +72,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426897311220360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.34119973, y: 0, z: 0, w: 0.9399909}
   m_LocalPosition: {x: 0, y: 1.73, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -86,8 +87,8 @@ Camera:
   m_GameObject: {fileID: 1426897311220360}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.5735294, g: 0.73937905, b: 1, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -99,7 +100,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967039
@@ -163,10 +164,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!81 &81952261791871050
 AudioListener:
@@ -211,6 +212,19 @@ MonoBehaviour:
   groundedMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &114907899419313348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327811625639362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba6e6c3b80130b4e9fb1a6cf363392f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 0}
 --- !u!124 &124560039151156406
 Behaviour:
   m_ObjectHideFlags: 1
