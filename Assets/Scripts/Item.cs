@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour {
+
+    public Text label;
 
 	// Use this for initialization
 	void Start () {
@@ -17,12 +20,24 @@ public class Item : MonoBehaviour {
             if (Input.GetButtonDown("Pickup"))
             {
                 other.GetComponent<Inventory>().AddItem(this);
-                Destroy(this.GetComponent<MeshRenderer>());
-                Destroy(this.GetComponent<BoxCollider>());
-                Destroy(this.GetComponent<SphereCollider>());
-                Destroy(this.GetComponent<GravityBody>());
-                Destroy(this.GetComponent<Rigidbody>());
+                this.gameObject.SetActive(false);
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            label.gameObject.SetActive(true);
+        }  
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            label.gameObject.SetActive(false);
         }
     }
 }
